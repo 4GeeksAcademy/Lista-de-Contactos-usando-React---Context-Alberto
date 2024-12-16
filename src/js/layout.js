@@ -6,9 +6,13 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import { Contact } from "./views/Contact.jsx";
+import { AddContact } from "./views/AddContact.jsx";
+import { ModContact } from "./views/ModContact.jsx";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -20,14 +24,15 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
+						<Route path="/AddContact" element={<AddContact />} />
+						<Route path="/contact" element={<Contact />} />	
+						<Route path="/ModContact/:contactId" element={<ModContact />} />			
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
@@ -35,3 +40,6 @@ const Layout = () => {
 };
 
 export default injectContext(Layout);
+
+//https://cautious-system-rw99pq9x94p2x6vw-3000.app.github.dev/
+//wss://cautious-system-rw99pq9x94p2x6vw-3000.preview.app.github.dev
